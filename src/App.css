@@ -25,6 +25,7 @@
   position: relative;
   font-size: clamp(0.8rem, 1.5vw, 1.2rem); 
   font-family: 'Roboto', Arial, sans-serif; 
+  max-width: 15%;
 }
 
 .sidebar ul {
@@ -60,6 +61,8 @@
 
 h1, h2{
   font-family: 'Roboto', Arial, sans-serif; 
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .main-content h3 {
