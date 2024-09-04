@@ -1,6 +1,6 @@
 # F1 FORMULA 1 RACE CONTROL ANNOUNCEMENT TRACKER
 
-##About
+## About
 In Formula 1 Races, incidents such as collisions or near-misses are noted and judged by the stewards based on the FIA's rulebook.
 Ruling on incidents are announced by Race Control throughout the Grand Prix.
 With simultaneous actions happening in the track among the 20 drivers, it can be difficult to track whether collisions or other incidents have been noted by the stewards or penalties have been given.
@@ -9,4 +9,5 @@ This tracker consolidates all announcements Race Control has made during the 202
 This appilcation uses OpenF1 API (https://openf1.org/) to retrieve Race Control data.
 
 ## Vercel link
-https://frontend-project-racecontrol-tracker.vercel.app/
+The tool can be accessed through the following link:
+``` https://frontend-project-racecontrol-tracker.vercel.app/ ```
