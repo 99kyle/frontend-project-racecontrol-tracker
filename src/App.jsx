@@ -6,48 +6,48 @@ let raceDataArray = [];
 
 //Constructor for Race Data Table
 const RCTable = ({ RCdata }) => {
-  console.log(raceDataArray);
   return (
-<table style={{ width: '100%', borderCollapse: 'collapse' }}>
-  <thead>
-    <tr style={{ backgroundColor: '#003087', color: '#FFFFFF' }}>
-      <th>Category</th>
-      <th>Date and Time (UTC)</th>
-      <th>Driver Number</th>
-      <th>Flag</th>
-      <th>Lap Number</th>
-      <th>Message</th>
-      <th>Scope</th>
-    </tr>
-  </thead>
-  <tbody>
-    {RCdata.map((data, index) => (
-      <tr
-        key={index}
-        style={{
-          backgroundColor: index % 2 === 0 ? '#EDEFF2' : '#FFFFFF', // Alternating row colors
-          color: '#000000',
-          transition: 'background-color 0.3s',
-        }}
-        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#B3C7E6')}
-        onMouseLeave={(e) =>
-          (e.currentTarget.style.backgroundColor =
-            index % 2 === 0 ? '#EDEFF2' : '#FFFFFF')
-        }
-      >
-        <td>{data.category}</td>
-        <td>{new Date(data.date).toLocaleString()}</td>
-        <td>{data.driver_number || 'N/A'}</td>
-        <td>{data.flag || 'N/A'}</td>
-        <td>{data.lap_number}</td>
-        <td>{data.message}</td>
-        <td>{data.scope || 'N/A'}</td>
-      </tr>
-    ))}
-  </tbody>
-</table>
+    <table style={{ width: '100%', borderCollapse: 'collapse', overflow: 'hidden' }}>
+      <thead>
+        <tr style={{ backgroundColor: '#003087', color: '#FFFFFF' }}>
+          <th>Category</th>
+          <th>Date and Time (UTC)</th>
+          <th>Driver Number</th>
+          <th>Flag</th>
+          <th>Lap Number</th>
+          <th>Message</th>
+          <th>Scope</th>
+        </tr>
+      </thead>
+      <tbody>
+        {RCdata.map((data, index) => (
+          <tr
+            key={index}
+            style={{
+              backgroundColor: index % 2 === 0 ? '#EDEFF2' : '#FFFFFF', // Alternating row colors
+              color: '#000000',
+              animation: `fadeIn 0.5s ease ${index * 0.1}s both, slideIn 0.5s ease ${index * 0.1}s both`,
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#B3C7E6')}
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.backgroundColor =
+                index % 2 === 0 ? '#EDEFF2' : '#FFFFFF')
+            }
+          >
+            <td>{data.category}</td>
+            <td>{new Date(data.date).toLocaleString()}</td>
+            <td>{data.driver_number || 'N/A'}</td>
+            <td>{data.flag || 'N/A'}</td>
+            <td>{data.lap_number}</td>
+            <td>{data.message}</td>
+            <td>{data.scope || 'N/A'}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 };
+
 
 function App() {
   const [meeting, setMeeting] = useState(''); 
@@ -142,7 +142,7 @@ function App() {
   return (
     <>
     <h1> FORMULA 1 RACE CONTROL ANNOUNCEMENT TRACKER</h1>
-    <h2> This tool provides up-to-date tracking of all Race Control announcements from the 2023 and 2024 Formula 1 seasons, offering details on flags, penalties, and announcements throughout each race</h2>
+    <h2> This tool provides up-to-date tracking of all Race Control announcements from the 2023 and 2024 Formula 1 seasons, offering details on flags, penalties, and announcements made by the stewards throughout each race</h2>
       <div className="container">
         <aside className="sidebar">
           <ul id="meetinglist">
@@ -156,7 +156,7 @@ function App() {
         <main className="main-content">
           <h2>{meeting}</h2>
           {loading ? (
-            <p>Loading...</p>
+            <p style={{ width: '100%', borderCollapse: 'collapse' }}>Loading...</p>
           ) : (
             <RCTable RCdata={(Object.values(raceData))} />
           )}
