@@ -10,4 +10,5 @@ This appilcation uses OpenF1 API (https://openf1.org/) to retrieve Race Control 
 
 ## Vercel link
 The tool can be accessed through the following link:
-``` https://frontend-project-racecontrol-tracker.vercel.app/ ```
+
+https://frontend-project-racecontrol-tracker.vercel.app/ 
