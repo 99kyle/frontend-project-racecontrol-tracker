@@ -9,6 +9,7 @@
   font-family: 'Roboto', Arial, sans-serif; 
   background-color: #002F6C ;
   animation: fadeInRoot 1s ease-out forwards; /* Root fade-in animation */  
+  padding-bottom: 15%;
 }
 
 @keyframes fadeInRoot {
