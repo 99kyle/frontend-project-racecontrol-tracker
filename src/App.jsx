@@ -130,11 +130,6 @@ function App() {
     getRaceControlData();
   }, [raceSessionKey]);
 
-  // Initialize meeting
-  useEffect(() => {
-    GetMeeting();
-  }, []);
-
   // handler for clicking available meetings
   function meetingOnclick(event) {
     const key = event.target.id; //meeting_key
@@ -158,6 +153,11 @@ function App() {
       (!flagFilter || data.flag === flagFilter)
     );
   });
+
+  // Initialize meeting
+  useEffect(() => {
+    GetMeeting();
+  }, []);
 
   return (
     <>
